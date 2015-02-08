@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import enums.EPozycjaGracza;
 import utils.Kostka;
 
 public class ListaGraczy {
@@ -24,10 +25,10 @@ public class ListaGraczy {
 	}
 	
 	private void ustawPozycjeGraczy() {
-		listaGraczy.get(0).ustawPozycjeGracza(PozycjaGracza.GORA);
-		listaGraczy.get(1).ustawPozycjeGracza(PozycjaGracza.PRAWA);
-		listaGraczy.get(2).ustawPozycjeGracza(PozycjaGracza.DOL);
-		listaGraczy.get(3).ustawPozycjeGracza(PozycjaGracza.LEWA);
+		listaGraczy.get(0).ustawPozycjeGracza(EPozycjaGracza.GORA);
+		listaGraczy.get(1).ustawPozycjeGracza(EPozycjaGracza.PRAWA);
+		listaGraczy.get(2).ustawPozycjeGracza(EPozycjaGracza.DOL);
+		listaGraczy.get(3).ustawPozycjeGracza(EPozycjaGracza.LEWA);
 	}
 	
 	public Gracz zwrocAktualnegoGracza() {

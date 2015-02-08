@@ -4,39 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import enums.EKlatwa;
+import enums.EKolor;
+
 public class Kostka {
 	private static Random random;
-	private List<Kolor> wyrzuconeKolory;
-	private Klatwa wyrzuconaKlatwa;
-	private List<Kolor> koscKolorow;
-	private List<Klatwa> koscKlatw;
+	private List<EKolor> wyrzuconeKolory;
+	private EKlatwa wyrzuconaKlatwa;
+	private List<EKolor> koscKolorow;
+	private List<EKlatwa> koscKlatw;
 	
 	public Kostka() {
 		random = new Random();
-		wyrzuconeKolory = new ArrayList<Kolor>(4);
+		wyrzuconeKolory = new ArrayList<EKolor>(4);
 		
 		inicjujKoscKolorow();
 		inicjujKoscKlatw();
 	}
 	
 	private void inicjujKoscKolorow() {
-		koscKolorow = new ArrayList<Kolor>(6);
-		koscKolorow.add(Kolor.BIALY);
-		koscKolorow.add(Kolor.CZARNY);
-		koscKolorow.add(Kolor.CZERWONY);
-		koscKolorow.add(Kolor.ZIELONY);
-		koscKolorow.add(Kolor.NIEBIESKI);
-		koscKolorow.add(Kolor.ZOLTY);
+		koscKolorow = new ArrayList<EKolor>(6);
+		koscKolorow.add(EKolor.BIALY);
+		koscKolorow.add(EKolor.CZARNY);
+		koscKolorow.add(EKolor.CZERWONY);
+		koscKolorow.add(EKolor.ZIELONY);
+		koscKolorow.add(EKolor.NIEBIESKI);
+		koscKolorow.add(EKolor.ZOLTY);
 	}
 	
 	private void inicjujKoscKlatw() {
-		koscKlatw = new ArrayList<Klatwa>();
-		koscKlatw.add(Klatwa.PUSTA);
-		koscKlatw.add(Klatwa.PUSTA);
-		koscKlatw.add(Klatwa.NAWIEDZA_WIESNIAKA);
-		koscKlatw.add(Klatwa.NASTEPNY_DUCH);
-		koscKlatw.add(Klatwa.STRATA_TAO);
-		koscKlatw.add(Klatwa.STRATA_QI);
+		koscKlatw = new ArrayList<EKlatwa>();
+		koscKlatw.add(EKlatwa.PUSTA);
+		koscKlatw.add(EKlatwa.PUSTA);
+		koscKlatw.add(EKlatwa.NAWIEDZA_WIESNIAKA);
+		koscKlatw.add(EKlatwa.NASTEPNY_DUCH);
+		koscKlatw.add(EKlatwa.STRATA_TAO);
+		koscKlatw.add(EKlatwa.STRATA_QI);
 	}
 	
 	public void rzucKoscmiKolorow(int iloscKosci) {
@@ -53,11 +56,11 @@ public class Kostka {
 		wyrzuconaKlatwa = koscKlatw.get(wylosujK6());
 	}
 	
-	public List<Kolor> wezWynikRzutuKolor() {
+	public List<EKolor> wezWynikRzutuKolor() {
 		return wyrzuconeKolory;
 	}
 	
-	public Klatwa wezWynikRzutuKlatwa() {
+	public EKlatwa wezWynikRzutuKlatwa() {
 		return wyrzuconaKlatwa;
 	}
 	

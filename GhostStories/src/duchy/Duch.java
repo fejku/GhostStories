@@ -2,18 +2,20 @@ package duchy;
 
 import java.util.List;
 
-import gracze.PozycjaGracza;
+import enums.EEfektCoTure;
+import enums.EEfektNatychmiastowy;
+import enums.EKolor;
+import enums.EPozycjaGracza;
 import plansza.Wioska;
-import utils.Kolor;
 import utils.Stale;
 //55 duchow
 //10 inkarnacji Wu-Fenga
 public class Duch {
 	String nazwa;
-	Kolor kolorDucha;
+	EKolor kolorDucha;
 	int odpornosc;
-	List<EfektNatychmiastowy> efektyNatychmiastowe;
-	List<EfektCoTure> efektyCoTure;
+	List<EEfektNatychmiastowy> efektyNatychmiastowe;
+	List<EEfektCoTure> efektyCoTure;
 	//Zdolnosc po przybyciu
 	//Zdolnosc w ka¿dej turze
 	//Nagroda
@@ -22,7 +24,7 @@ public class Duch {
 	private int stopienNawiedzenia; //0, 1, 2
 	private boolean czyDreczy;
 	
-	public Duch(String nazwa, Kolor kolorDucha, int odpornosc, List<EfektNatychmiastowy> efektyNatychmiastowe, List<EfektCoTure> efektyCoTure) {
+	public Duch(String nazwa, EKolor kolorDucha, int odpornosc, List<EEfektNatychmiastowy> efektyNatychmiastowe, List<EEfektCoTure> efektyCoTure) {
 		this.nazwa = nazwa;
 		this.kolorDucha = kolorDucha;
 		this.odpornosc = odpornosc;
@@ -34,7 +36,7 @@ public class Duch {
 		return czyNawiedza;
 	}
 	
-	public void Nawiedzaj(Wioska wioska, PozycjaGracza pozycjaGracza, int nrPola) {
+	public void Nawiedzaj(Wioska wioska, EPozycjaGracza pozycjaGracza, int nrPola) {
 		stopienNawiedzenia++;
 		if (stopienNawiedzenia == 3) {
 			stopienNawiedzenia = 0;
@@ -48,9 +50,9 @@ public class Duch {
 		}
 	}
 	
-	public int zwrocNrWiesniakaPrzedPolem(Wioska wioska, PozycjaGracza pozycjaGracza, int nrPola) {
+	public int zwrocNrWiesniakaPrzedPolem(Wioska wioska, EPozycjaGracza pozycjaGracza, int nrPola) {
 		int nrWiesniakaPrzedPolem;
-		if (pozycjaGracza == PozycjaGracza.GORA) {
+		if (pozycjaGracza == EPozycjaGracza.GORA) {
 			for (int i = 0; i < Stale.LICZBA_POL; i++) {
 				nrWiesniakaPrzedPolem = nrPola + (i * 3);
 				if(!wioska.zwrocListeWiesniakow().get(nrWiesniakaPrzedPolem).czyAktywny())
@@ -59,7 +61,7 @@ public class Duch {
 //			nrPola == 0 -> 0,3,6
 //			nrPola == 1 -> 1,4,7
 //			nrPola == 2 -> 2,5,8
-		} else if (pozycjaGracza == PozycjaGracza.DOL) {
+		} else if (pozycjaGracza == EPozycjaGracza.DOL) {
 			for (int i = Stale.LICZBA_POL; i > 0; i--) {
 				nrWiesniakaPrzedPolem = nrPola + (i * 3);
 				if(!wioska.zwrocListeWiesniakow().get(nrWiesniakaPrzedPolem).czyAktywny())
@@ -68,7 +70,7 @@ public class Duch {
 //			nrPola == 0 -> 6,3,0
 //			nrPola == 1 -> 7,4,1
 //			nrPola == 2 -> 8,5,2
-		} else if (pozycjaGracza == PozycjaGracza.LEWA) {
+		} else if (pozycjaGracza == EPozycjaGracza.LEWA) {
 			for (int i = 0; i < Stale.LICZBA_POL; i++) {
 				nrWiesniakaPrzedPolem = i + (nrPola * 3);
 				if(!wioska.zwrocListeWiesniakow().get(nrWiesniakaPrzedPolem).czyAktywny())
@@ -77,7 +79,7 @@ public class Duch {
 //			nrPola == 0 -> 0,1,2
 //			nrPola == 1 -> 3,4,5
 //			nrPola == 2 -> 6,7,8
-		} else if (pozycjaGracza == PozycjaGracza.PRAWA) {
+		} else if (pozycjaGracza == EPozycjaGracza.PRAWA) {
 			for (int i = Stale.LICZBA_POL; i > 0; i--) {
 				nrWiesniakaPrzedPolem = i + (nrPola * 3);
 				if(!wioska.zwrocListeWiesniakow().get(nrWiesniakaPrzedPolem).czyAktywny())

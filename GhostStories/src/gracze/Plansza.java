@@ -6,13 +6,14 @@ import java.util.Collections;
 import java.util.List;
 
 import duchy.Duch;
+import enums.EPozycjaGracza;
 import plansza.Wioska;
 import utils.Stale;
 
 //Plansza gracza na której znajduj¹ siê duchy
 public class Plansza {
 	private Duch[] pola;
-	private PozycjaGracza pozycja;
+	private EPozycjaGracza pozycja;
 	
 	public Plansza() {
 		pola = new Duch[Stale.LICZBA_POL];
@@ -41,7 +42,7 @@ public class Plansza {
 			return false;
 	}
 	
-	public void Nawiedzaj(Wioska wioska, PozycjaGracza pozycjaGracza, int nrPola) {
+	public void Nawiedzaj(Wioska wioska, EPozycjaGracza pozycjaGracza, int nrPola) {
 		pola[nrPola].Nawiedzaj(wioska, pozycjaGracza, nrPola);
 	}
 	

@@ -1,5 +1,6 @@
 package gracze;
 
+import enums.EPozycjaGracza;
 import plansza.Wioska;
 import utils.Stale;
 
@@ -8,7 +9,7 @@ public abstract class Gracz {
 	private int aktualnePole;
 	private int nastepnePole;
 	private Plansza plansza;
-	private PozycjaGracza pozycjaGracza;
+	private EPozycjaGracza pozycjaGracza;
 	
 	public Gracz() {
 		punktyQi = 2;
@@ -57,7 +58,7 @@ public abstract class Gracz {
 		aktualnePole = nastepnePole;
 	}
 	
-	public void ustawPozycjeGracza(PozycjaGracza pozycjaGracza) {
+	public void ustawPozycjeGracza(EPozycjaGracza pozycjaGracza) {
 		this.pozycjaGracza = pozycjaGracza;
 	}
 }

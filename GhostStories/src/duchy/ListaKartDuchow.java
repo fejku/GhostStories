@@ -1,12 +1,13 @@
 package duchy;
 
+import enums.EEfektCoTure;
+import enums.EEfektNatychmiastowy;
+import enums.EKolor;
 import gracze.Gracz;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import utils.Kolor;
 
 public class ListaKartDuchow {
 	private List<Duch> listaKartDuchow;
@@ -14,9 +15,9 @@ public class ListaKartDuchow {
 	public ListaKartDuchow()
 	{
 		listaKartDuchow = new ArrayList<Duch>();
-		listaKartDuchow.add(new Duch("Ghoul", Kolor.ZOLTY, 1, null, Arrays.asList(EfektCoTure.NAWIEDZANIE)));
-		listaKartDuchow.add(new Duch("Walking Corpse", Kolor.ZOLTY, 1, null, Arrays.asList(EfektCoTure.KOSCI_TAO_NIE_MAJA_EFEKTU)));
-		listaKartDuchow.add(new Duch("Coffin Breakers", Kolor.ZOLTY, 1, Arrays.asList(EfektNatychmiastowy.NOWY_DUCH, EfektNatychmiastowy.ZABLOKUJ_MOC_GRACZA), null));
+		listaKartDuchow.add(new Duch("Ghoul", EKolor.ZOLTY, 1, null, Arrays.asList(EEfektCoTure.NAWIEDZANIE)));
+		listaKartDuchow.add(new Duch("Walking Corpse", EKolor.ZOLTY, 1, null, Arrays.asList(EEfektCoTure.KOSCI_TAO_NIE_MAJA_EFEKTU)));
+		listaKartDuchow.add(new Duch("Coffin Breakers", EKolor.ZOLTY, 1, Arrays.asList(EEfektNatychmiastowy.NOWY_DUCH, EEfektNatychmiastowy.ZABLOKUJ_MOC_GRACZA), null));
 	}
 	
 	public void wyciagnijKarte(List<Gracz> listaGraczy) {

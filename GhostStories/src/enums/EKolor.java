@@ -1,5 +1,5 @@
-package utils;
+package enums;
 
-public enum Kolor {
+public enum EKolor {
 	BIALY, CZARNY, CZERWONY, ZOLTY, NIEBIESKI, ZIELONY
 }

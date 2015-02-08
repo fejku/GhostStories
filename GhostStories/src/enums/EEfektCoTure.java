@@ -1,5 +1,5 @@
-package duchy;
+package enums;
 
-public enum EfektCoTure {
+public enum EEfektCoTure {
 	NAWIEDZANIE, KOSCI_TAO_NIE_MAJA_EFEKTU, RZUT_KOSCIA_KLATWY;
 }
